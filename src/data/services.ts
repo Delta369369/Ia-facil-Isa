@@ -61,10 +61,10 @@ export const services: Service[] = [
     "note": "Características essenciais do produto devem ser preservadas. Detalhes e textos são conferidos na aprovação. As imagens do portfólio são conceitos fictícios.",
     "packages": [
       {
-        "name": "Projeto personalizado",
+        "name": "Kit com 3 imagens",
         "price": 99,
         "quantity": "3 imagens comerciais finalizadas de um mesmo produto",
-        "delivery": "Prazo definido no orçamento",
+        "delivery": "Até 3 dias úteis",
         "revisions": 1,
         "active": true
       }
