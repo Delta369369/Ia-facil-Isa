@@ -43,9 +43,9 @@ export const services: Service[] = [
   },
   {
     "slug": "fotos-comerciais",
-    "name": "Fotos comerciais de produtos",
-    "short": "Valorize o que você vende.",
-    "description": "Transformamos suas fotos em imagens comerciais com cenários e iluminação para destacar produtos e alimentos.",
+    "name": "Kit de fotos comerciais para produtos",
+    "short": "3 imagens comerciais para apresentar melhor o seu produto.",
+    "description": "Transformamos as fotos de um mesmo produto em 3 imagens comerciais com cenários e iluminação planejados. Alimentos também podem ser atendidos dentro do escopo combinado.",
     "category": "PARA NEGÓCIOS LOCAIS",
     "kind": "product",
     "image": "pizza-comercial.jpg",
@@ -57,13 +57,13 @@ export const services: Service[] = [
       "Redes sociais",
       "Composições para anúncios"
     ],
-    "materials": "Envie fotos nítidas do produto em diferentes ângulos e referências do visual desejado.",
+    "materials": "Envie fotos nítidas do mesmo produto em diferentes ângulos e referências do visual desejado. Confirmamos formatos, cenas e escopo antes de começar.",
     "note": "Características essenciais do produto devem ser preservadas. Detalhes e textos são conferidos na aprovação. As imagens do portfólio são conceitos fictícios.",
     "packages": [
       {
         "name": "Projeto personalizado",
-        "price": 0,
-        "quantity": "3 imagens comerciais finalizadas",
+        "price": 99,
+        "quantity": "3 imagens comerciais finalizadas de um mesmo produto",
         "delivery": "Prazo definido no orçamento",
         "revisions": 1,
         "active": true
