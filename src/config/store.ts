@@ -5,7 +5,7 @@ export const store = {
   instagramHandle: '@isabela_guardian',
   virtualPersona: true,
   whatsapp: '', // Apenas dígitos: código do país + DDD + número. Nunca coloque credenciais aqui.
-  url: 'https://ia-facil-studio-delta369.nuttystone14.chatgpt.site', // URL pública completa, incluindo a pasta do repositório, sem barra final.
+  url: '', // URL canônica definida pelo SITE_URL no build da hospedagem definitiva. Nunca apontar para uma hospedagem diferente.
   tagline: 'Seu negócio merece chamar atenção.',
   provisionalPrices: true,
 };
