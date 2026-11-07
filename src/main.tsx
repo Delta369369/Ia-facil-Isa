@@ -7,6 +7,7 @@ import './styles/neon.css';
 import './styles/cinematic.css';
 import './styles/future-glass.css';
 import './styles/shorts-neon.css';
+import './styles/cinematic-review.css';
 const node = document.getElementById('root')!;
 const app = <BrowserRouter basename={import.meta.env.BASE_URL}><App/></BrowserRouter>;
 if(node.hasChildNodes() && node.querySelector('header'))hydrateRoot(node,app);else createRoot(node).render(app);
