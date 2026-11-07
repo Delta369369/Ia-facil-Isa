@@ -14,7 +14,7 @@ const existing:Record<string,string>={
  'isa-perfil.webp':'8d87259fe9f9247d968712ee7a5e677f75f6b11b',
  'pizza-comercial.jpg':'acaf2d9a04bae2adbafc3159d0be2a2c5e896f16',
  'presenca-digital.svg':'c776496c1da9d23e36358710326f857724b6f751',
- 'produto-base.svg':'6239b52c5a28de3b25ac1a7ff728baa674709f9',
+ 'produto-base.svg':'6239b52c5a28de3b25ac1a7ff728baa674709f9a',
  'produto.webp':'1a2f3bdf4069d84e21e5718a7e6518bd4a5cf519',
  'site-cardapio.svg':'021b33f590ec7592e53381bb30357d3717e35e8f',
  'video-conceito.svg':'5961adcd314eebf82205bf10dc4df5e81c69d69b'
