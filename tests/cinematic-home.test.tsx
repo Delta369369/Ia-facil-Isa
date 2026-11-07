@@ -58,3 +58,33 @@ test('as três referências neon do Google Drive estão versionadas e visíveis 
  assert.match(html,/shorts-neon-feature/);
  assert.ok(existsSync('src/styles/shorts-neon.css'));
 });
+
+test('revisão visual é a última camada CSS e mantém paleta azul-violeta',()=>{
+ const entry=readFileSync('src/main.tsx','utf8');
+ const imports=Array.from(entry.matchAll(/import '\.\/styles\/([^']+\.css)'/g),m=>m[1]);
+ assert.equal(imports.at(-1),'cinematic-review.css','Revisão deve ter precedência sobre a camada neon');
+ const styles=readFileSync('src/styles/cinematic-review.css','utf8');
+ assert.match(styles,/--cinematic-violet:\s*#a18bff/i);
+ assert.match(styles,/--future-accent:\s*#79c9ff/i);
+ assert.match(styles,/\.cinematic-hero\s+\.neon-copy\s+h1\s+span/);
+ assert.match(styles,/\.cinematic-gallery\s+\.neon-gallery-item/);
+ assert.match(styles,/prefers-reduced-motion/);
+});
+
+test('home conserva ISA Shorts, retratos e galeria sem links externos de imagem',()=>{
+ const home=readFileSync('src/pages/Home.tsx','utf8');
+ const required=[
+  'neon/isa-neon-portrait.jpg',
+  'neon/isa-facil-shorts-banner.jpg',
+  'neon/shorts-visual-reference.png',
+  'cinematic/isa-blazer-royal.webp',
+  'cinematic/isa-blazer-marinho.webp',
+  'cinematic/campanha-fotorrealista.webp'
+ ];
+ for(const name of required) assert.ok(home.includes(name),'Referência de imagem removida: '+name);
+ assert.ok(!/src:\s*['"]https?:\/\//.test(home),'Galeria não deve depender de URL remota');
+ const html=renderToString(<MemoryRouter><Home/></MemoryRouter>);
+ assert.match(html,/aria-label="Filtrar portfólio"/);
+ assert.match(html,/PERSONAGEM VIRTUAL/);
+ assert.match(html,/cinematic-feature-grid/);
+});
