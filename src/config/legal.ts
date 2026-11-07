@@ -9,7 +9,7 @@ export const legal = {
   providerName: '',
   registrationLabel: '', // 'CNPJ' ou 'CPF', conforme a identificação real
   registrationNumber: '',
-  physicalAddress: '',
+  physicalAddress: 'Rua 13, Triunfo, Confresa–MT, CEP 78652-000',
   businessEmail: 'ndop18@gmail.com',
   privacyEmail: 'ndop18@gmail.com',
   lastReviewed: '06/11/2026',
