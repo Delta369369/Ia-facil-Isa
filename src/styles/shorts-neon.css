@@ -1,0 +1,65 @@
+/* ISA Fácil — atualização neon ciano / magenta. Camada aditiva, sem remover estilos anteriores. */
+:root{
+ --shorts-night:#031020;--shorts-panel:#071b30;--shorts-cyan:#29eeff;--shorts-pink:#ff3ca7;--shorts-text:#f7fcff;
+ --future-accent:var(--shorts-cyan);--future-primary:#17b6ee;--future-line:#36e9fa88;
+ --accent:var(--shorts-cyan);--neon-violet:var(--shorts-pink);--cinematic-violet:var(--shorts-pink);
+}
+body{background:radial-gradient(ellipse 45% 480px at 89% 9%,#17a9da2b,transparent 70%),radial-gradient(ellipse 46% 540px at 5% 24%,#b92d9c1f,transparent 76%),linear-gradient(155deg,#030b18,#051528 40%,#061322 75%,#020a15);color:var(--shorts-text)}
+header{background:#03101ef2;border-bottom:1px solid #37e8ff85;box-shadow:0 0 28px #00dfff25,0 2px 0 #ff3ca71c;backdrop-filter:blur(22px)}
+header .nav{position:relative}header .nav:after{content:"";position:absolute;pointer-events:none;bottom:-2px;left:7%;right:7%;height:1px;background:linear-gradient(90deg,transparent,#19edff,#ff3ca7,#19edff,transparent);opacity:.75}
+.brandmark{background:linear-gradient(145deg,#053f6e,#16bbef);border:1px solid #8df6ff;box-shadow:0 0 18px #10d7ff70,0 0 32px #10d7ff42}
+.brand-dot,.eyebrow,.text-button,.service-intro h1 span{color:var(--shorts-cyan)}
+.nav nav a:hover{color:#8af8ff;text-shadow:0 0 13px #11d9ffad}
+.button{background:linear-gradient(115deg,#e5288f,#ff4dab 55%,#f51e8c);border:1px solid #ff8aca;color:#fff;box-shadow:0 0 18px #ff2c9f80,0 8px 28px #e31c864a}
+.button:hover{background:linear-gradient(115deg,#ff3da5,#ff73c2);box-shadow:0 0 27px #ff47afaa,0 9px 30px #ff3da560}
+.button.outline{background:#061e31d9;border:1px solid #30e7ffba;color:#e9fdff;box-shadow:0 0 14px #00d8f94a}
+.button.outline:hover{background:#0e4260;box-shadow:0 0 25px #00d8ff80}
+:focus-visible{outline:3px solid #fff!important;outline-offset:4px}
+.cinematic-hero{min-height:690px;position:relative;padding-top:62px;padding-bottom:58px}
+.cinematic-hero:before{background-image:linear-gradient(#1ab7e014 1px,transparent 1px),linear-gradient(90deg,#1ab7e014 1px,transparent 1px);background-size:52px 52px}
+.cinematic-hero:after{background:radial-gradient(ellipse at 76% 42%,#07d9ff25,transparent 45%),radial-gradient(ellipse at 56% 58%,#ff3ca71e,transparent 44%)}
+.cinematic-hero .neon-copy h1{font-size:clamp(43px,5.6vw,82px);letter-spacing:-.067em;line-height:1.035}
+.cinematic-hero .neon-copy h1 span{background-image:linear-gradient(95deg,#d7fdff,#4aeaff 40%,#ff81ce 92%);text-shadow:0 0 32px #10c4e51e}
+.cinematic-hero .hero-copy>p{color:#d0e6f3}
+.neon-hero .hero-notes svg,.status-dot{color:var(--shorts-cyan)}
+.status-dot{background:var(--shorts-cyan);box-shadow:0 0 16px #0cf3ff}
+.cinematic-isa{filter:drop-shadow(0 0 30px #00dfff50)}
+.cinematic-isa .isa-portrait{top:58px;left:4%;width:92%;max-width:560px;aspect-ratio:1;border-radius:23px;overflow:hidden;border:2px solid #55eaff;box-shadow:0 0 0 5px #00cfff1a,0 0 52px #16d7ff79,0 0 85px #fb39a540}
+.cinematic-isa .isa-portrait img{border-radius:21px;object-fit:cover;object-position:50% 34%;height:100%}
+.cinematic-isa .isa-orbit{border-color:#2fe8ff88}
+.cinematic-isa .studio-word{color:#ff62be17;-webkit-text-stroke:1px #ff80d073;right:3%;top:3%;z-index:2;font-size:clamp(36px,4vw,65px)}
+.cinematic-isa .floating-service{border:1px solid #49eafa;background:#04182de8;box-shadow:0 0 24px #04d5ff5a;transform:none}
+.cinematic-isa .floating-video{border-color:#ff6fbd;box-shadow:0 0 24px #fc32995e}
+.cinematic-isa .isa-signature{bottom:0;left:50%;transform:translateX(-50%)}
+.cinematic-isa .isa-signature>span{color:#defdff}
+.neon-disciplines{border-color:#27d6f859}
+.neon-disciplines i,.neon-disciplines a{color:var(--shorts-pink)}
+.shorts-neon-feature{display:grid;grid-template-columns:minmax(0,.73fr) minmax(0,1.27fr);gap:clamp(22px,4vw,56px);align-items:center;padding-top:42px;padding-bottom:56px}
+.shorts-neon-intro{padding:8px 0}
+.shorts-neon-intro h2{font-size:clamp(31px,3.25vw,49px);line-height:1.08;letter-spacing:-.055em;margin:15px 0 20px}
+.shorts-neon-intro h2 em{font-style:normal;color:#7df8ff;text-shadow:0 0 22px #22dfff47}
+.shorts-neon-intro p{color:#c8e4f1;line-height:1.8;font-size:14px;max-width:460px}
+.shorts-neon-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:27px}
+.shorts-neon-actions .button{font-size:12px;display:inline-flex;align-items:center;gap:8px}
+.shorts-neon-banner{position:relative;margin:0;min-width:0;padding:7px;background:#03192b;border:1px solid #26eaff;border-radius:20px;box-shadow:0 0 18px #0de8ff8c,0 0 42px #e22fa92f}
+.shorts-neon-banner:before{content:"";position:absolute;inset:-2px;pointer-events:none;border-radius:20px;box-shadow:inset 0 0 16px #28edff70}
+.shorts-neon-banner img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;border-radius:13px}
+.shorts-neon-banner figcaption{font-size:10px;color:#b2d4e5;padding:11px 8px 4px}
+.neon-section .service-card,.neon-section .custom-card,.package,.neon-value-grid article{background:linear-gradient(150deg,#0c263b,#081326 64%,#130d29);border:1px solid #23dcf18c;box-shadow:0 0 0 1px #1ab9d71c,0 0 23px #08a9df26}
+.neon-section .service-card:nth-child(3n+2){border-color:#f748aa85;box-shadow:0 0 22px #f52b8e25}
+.neon-section .service-card:hover,.neon-section .custom-card:hover{border-color:#8ef9ff;box-shadow:0 0 26px #19d8ff91,0 0 47px #ff3ca72c}
+.neon-section .section-heading h2,.neon-portfolio h2,.cinematic-featured h2{color:#f7fdff}
+.cinematic-featured,.neon-showreel,.neon-portfolio,.neon-process{background:radial-gradient(ellipse at 85% 15%,#03d5ff19,transparent 55%),radial-gradient(ellipse at 15% 86%,#ff3ca713,transparent 52%),#051423;border-color:#29d7ef66}
+.cinematic-feature-card,.cinematic-gallery .neon-gallery-item,.showreel-stage,.neon-isa-story-image,.dark-studio-visual{border:1px solid #27e8f5a8;box-shadow:0 0 17px #0ccdfb42,0 24px 42px #0006}
+.cinematic-feature-card:nth-child(2),.cinematic-gallery .neon-gallery-item:nth-child(3n){border-color:#fc52b9a8;box-shadow:0 0 18px #ff3ca744}
+.cinematic-feature-card:hover,.cinematic-gallery .neon-gallery-item:hover{border-color:#fff;box-shadow:0 0 30px #25e8ff8c}
+.cinematic-featured-intro h2 em,.neon-isa-story h2 em{color:#ff7aca}
+.cinematic-feature-overlay small,.neon-gallery-info small{color:#89f3ff}
+.portfolio-filters button{border-color:#32dbe890;background:#081b32;color:#e8f9ff}
+.portfolio-filters button.active,.portfolio-filters button:hover{background:#cf2587;border-color:#ff8ad1;box-shadow:0 0 18px #ff3ca761}
+.neon-lightbox-dialog,.service-visual-dialog{border-color:#2be3f7;box-shadow:0 0 36px #04cfff52}
+.contact-section{background:radial-gradient(at 100% 0%,#ff3ca71c,transparent 58%),#071b2d;border-color:#27ebff}
+@media(max-width:980px){.shorts-neon-feature{grid-template-columns:1fr;gap:22px}.shorts-neon-intro p{max-width:760px}.cinematic-isa .isa-portrait{max-width:none}}
+@media(max-width:700px){.cinematic-hero{min-height:0;padding-top:48px}.cinematic-isa{height:420px}.cinematic-isa .isa-portrait{left:5%;width:90%;top:40px;max-width:400px}.cinematic-isa .studio-word{font-size:39px;top:8px;right:5%}.cinematic-isa .floating-photo{right:0;top:87px}.cinematic-isa .floating-video{left:0;bottom:70px}.cinematic-isa .isa-signature{bottom:0}.shorts-neon-feature{padding-top:24px;padding-bottom:35px}.shorts-neon-intro h2{font-size:clamp(30px,8vw,43px)}.shorts-neon-banner{padding:4px;border-radius:12px}.shorts-neon-banner img{border-radius:8px}}
+@media(max-width:430px){.cinematic-isa{height:360px}.cinematic-isa .isa-portrait{top:41px;left:7%;width:86%}.cinematic-isa .floating-photo{top:66px}.cinematic-isa .floating-video{bottom:52px}.shorts-neon-actions .button{width:100%;justify-content:center}}
+@media(prefers-reduced-motion:reduce){.shorts-neon-banner,.cinematic-isa .isa-portrait{transition:none;animation:none}}
