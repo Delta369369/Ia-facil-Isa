@@ -10,7 +10,7 @@ export const legal = {
   registrationLabel: '', // 'CNPJ' ou 'CPF', conforme a identificação real
   registrationNumber: '',
   physicalAddress: '',
-  businessEmail: '',
-  privacyEmail: '',
+  businessEmail: 'ndop18@gmail.com',
+  privacyEmail: 'ndop18@gmail.com',
   lastReviewed: '06/11/2026',
 } as const;
