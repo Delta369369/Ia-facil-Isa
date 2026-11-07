@@ -1,34 +1,33 @@
 # IA Fácil Dark Premium — checklist para publicação definitiva
 
-Data de revisão: 2026-11-06 (America/Cuiaba)
+Revisão: 06/11/2026 (America/Cuiaba)
 
 ## Código e conteúdo
 
-- [x] Versão `feat/ia-facil-dark-premium` isolada da `main`
-- [x] Home Dark Premium com ISA Guardiã e área Dark Studio
-- [x] Cinco serviços e condições comerciais mantidos
-- [x] 11 arquivos existentes de `public/assets` preservados
-- [x] Galeria usa imagens previamente existentes e distingue conceitos de trabalhos reais
-- [x] Testes de unidade `pnpm test` aprovados no GitHub Actions PR #2
-- [x] Compilação `pnpm build` aprovada no GitHub Actions PR #2
-- [x] Testes de saída estática aprovados no GitHub Actions PR #2
-- [ ] Verificação visual final em celular e computador no ambiente de produção
-- [ ] Confirmar funcionamento do contato Instagram em ambiente real
+- [x] Home e ISA Guardiã na branch `feat/ia-facil-dark-premium`, sem mudar `main`
+- [x] Cinco serviços existentes, pacotes e atendimento no Instagram preservados
+- [x] 11 imagens e artes anteriores em `public/assets` preservadas
+- [x] Testes e compilação do PR #2 aprovados na primeira revisão (https://github.com/Delta369369/TioPatinhas/actions/runs/42326171347)
+- [x] HTML pré-renderizado das páginas de serviços, páginas institucionais e erro 404
+- [x] Node.js 24 fixado em `.node-version`
+- [x] Guia de implantação Cloudflare Pages em `docs/CLOUDFLARE_PAGES.md`
+- [x] URL antiga removida do fallback de SEO: usar `SITE_URL` da hospedagem confirmada
+- [x] Informações institucionais preparadas em `src/pages/Institutional.tsx`, com dados opcionais centralizados em `src/config/legal.ts`
 
-## Publicação — pendências
+## Pendências externas indispensáveis
 
-- [ ] Definir hospedagem para site comercial (não utilizar GitHub Pages como hospedagem principal de negócio sem confirmar adequação aos termos)
-- [ ] Confirmar URL final e domínio personalizado, se houver
-- [ ] Configurar variáveis SITE_URL / SITE_BASE no build e validar links internos
-- [ ] Informar identificação do responsável comercial e canal de privacidade nos textos institucionais
-- [ ] Revisar termos comerciais, cancelamentos e licenças
-- [ ] Garantir HTTPS e realizar teste real depois da implantação
-- [ ] Aprovar implantação final e integrar PR #2 à `main`
+- [ ] Aguardar novo CI do PR #2 após alterações institucionais e de configuração
+- [ ] Autorizar Cloudflare Pages ↔ GitHub para `Delta369369/TioPatinhas`
+- [ ] Confirmar URL pública e preencher SITE_URL
+- [ ] Completar a identidade do fornecedor real e contatos institucionais em `src/config/legal.ts`
+- [ ] Validar política de privacidade contra os fornecedores efetivamente usados e a rotina real de tratamento de arquivos
+- [ ] Confirmar condições de cancelamento, licenças e direitos aplicáveis na contratação
+- [ ] Revisar prévia no celular e desktop
+- [ ] Fazer merge na branch `main` depois de cumprir as pendências e conferir o deploy
+- [ ] Testar as URLs públicas, SEO e canal de atendimento pós-implantação
 
-## Restrições e decisão
+## Regras de segurança
 
-Não executar workflow manual de GitHub Pages nem mesclar o PR sem escolha explícita do destino da hospedagem e conferência das informações institucionais pendentes.
+Não publicar dados fictícios de fornecedor. Não implantar como operação comercial definitiva enquanto os dados institucionais exigíveis estiverem ausentes. Não modificar ou substituir fotos existentes. Não utilizar GitHub Pages como hospedagem comercial principal.
 
-Referência dos testes: https://github.com/Delta369369/TioPatinhas/actions/runs/42326171347
-
-Referência da proposta: https://github.com/Delta369369/TioPatinhas/pull/2
+PR de publicação: https://github.com/Delta369369/TioPatinhas/pull/2
