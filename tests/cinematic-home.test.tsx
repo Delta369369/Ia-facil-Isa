@@ -44,3 +44,17 @@ test('home 2.0 renderiza hero cinematográfico, destaques e categorias',()=>{
  assert.match(html,/cinematic-gallery/);
  assert.match(html,/Dark Studio/i);
 });
+
+test('as três referências neon do Google Drive estão versionadas e visíveis no site',()=>{
+ const home=readFileSync('src/pages/Home.tsx','utf8');
+ const names=['isa-facil-shorts-banner.jpg','isa-neon-portrait.jpg','shorts-visual-reference.png'];
+ for(const name of names){
+  assert.ok(existsSync('public/assets/neon/'+name),'Arquivo de referência ausente: '+name);
+  assert.ok(home.includes('neon/'+name),'Arquivo fora da experiência visual: '+name);
+ }
+ const html=renderToString(<MemoryRouter><Home/></MemoryRouter>);
+ assert.match(html,/ISA FÁCIL SHORTS/);
+ assert.match(html,/shorts-neon-banner/);
+ assert.match(html,/shorts-neon-feature/);
+ assert.ok(existsSync('src/styles/shorts-neon.css'));
+});
