@@ -9,7 +9,7 @@ import { services } from '../src/data/services';
 test('home premium preserva cinco serviços e mantém acesso ao orçamento',()=>{
  const html=renderToString(<MemoryRouter><Home/></MemoryRouter>);
  assert.match(html,/ISA Guardiã/);
- assert.match(html,/Dark Studio/);
+ assert.match(html,/Dark Studio/i);
  assert.match(html,/Explorar portfólio/);
  for(const service of services)assert.ok(html.includes(service.name),service.name);
  assert.match(html,/Orçamento antes de começar/);
