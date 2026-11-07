@@ -1,0 +1,45 @@
+/* Revisão visual IA Fácil 2.0 — mantém imagens e conteúdo; harmoniza o tema azul-violeta. */
+:root {
+  --accent: #79c9ff;
+  --future-accent: #79c9ff;
+  --future-primary: #536fff;
+  --neon-violet: #a18bff;
+  --cinematic-violet: #a18bff;
+  --future-line: #8e9cff66;
+}
+body {
+  background:
+    radial-gradient(ellipse 48% 540px at 85% 12%, #3458b53d, transparent 76%),
+    radial-gradient(ellipse 44% 560px at 7% 35%, #704cc431, transparent 78%),
+    linear-gradient(150deg, #040918, #09152a 48%, #070c1d);
+}
+header { background: #071327ed; border-bottom-color: #879fff66; }
+header .nav:after { background: linear-gradient(90deg,transparent,#68c8ff,#a18bff,#68c8ff,transparent); }
+.brandmark { background: linear-gradient(135deg,#205db9,#7465cf); border-color:#9bc4ff; box-shadow:0 0 18px #617cfa66; }
+.brand-dot,.eyebrow,.text-button,.service-intro h1 span { color:#91d4ff; }
+.button { background:linear-gradient(110deg,#266bc7,#555ed9 60%,#7663cb); border-color:#aeb8ff88; box-shadow:0 10px 30px #475bca55; }
+.button:hover { background:linear-gradient(110deg,#377fdc,#7770df); box-shadow:0 15px 36px #6475dd66; }
+.button.outline { background:#152340d9; border-color:#a5b6ff88; color:#f4f7ff; }
+.cinematic-hero:after { background:radial-gradient(ellipse at 74% 42%,#547dff32,transparent 47%),radial-gradient(ellipse at 52% 60%,#9159db27,transparent 46%); }
+.cinematic-hero .neon-copy h1 span { background-image:linear-gradient(95deg,#b8e7ff,#79bfff 40%,#ba9dff 96%); }
+.neon-aura { background:radial-gradient(ellipse at 55% 48%,#598bff48 0%,#7661dc26 44%,transparent 74%); }
+.cinematic-isa { filter:drop-shadow(0 0 28px #687dff55); }
+.cinematic-isa .isa-portrait { border-color:#a5bcff; box-shadow:0 0 0 5px #607dff23,0 0 52px #577eff72,0 0 85px #a15bef45; }
+.cinematic-isa .floating-service { border-color:#86b7ff; box-shadow:0 0 24px #527bff4d; }
+.cinematic-isa .floating-video { border-color:#bb9cff; box-shadow:0 0 24px #a978ff52; }
+.neon-disciplines i,.neon-disciplines a { color:#bda0ff; }
+.neon-section .service-card,.neon-section .custom-card,.package,.neon-value-grid article { border-color:#829aff73; box-shadow:0 0 0 1px #7a8eff21,0 0 23px #5870ce2c; }
+.neon-section .service-card:nth-child(3n+2) { border-color:#ae8cfa85; box-shadow:0 0 22px #9569ed26; }
+.cinematic-featured,.neon-showreel,.neon-portfolio,.neon-process { background:radial-gradient(ellipse at 85% 15%,#4b7cfd20,transparent 55%),radial-gradient(ellipse at 15% 86%,#a26dff19,transparent 52%),#070f24; border-color:#8098ed5f; }
+.cinematic-feature-card,.cinematic-gallery .neon-gallery-item,.showreel-stage,.neon-isa-story-image,.dark-studio-visual { border-color:#819feb91; box-shadow:0 0 17px #416dcf32,0 24px 42px #0006; }
+.cinematic-feature-card:nth-child(2),.cinematic-gallery .neon-gallery-item:nth-child(3n) { border-color:#ae8cf096; box-shadow:0 0 18px #8e63e13d; }
+.cinematic-featured-intro h2 em,.neon-isa-story h2 em { color:#bca4ff; }
+.cinematic-feature-overlay small,.neon-gallery-info small { color:#a3d7ff; }
+.portfolio-filters button { border-color:#809bea88; background:#101e3a; }
+.portfolio-filters button.active,.portfolio-filters button:hover { background:#5554b1; border-color:#b4a5ff; box-shadow:0 0 18px #756af350; }
+.neon-lightbox-dialog,.service-visual-dialog { border-color:#8aabff; box-shadow:0 0 36px #6c78ee48; }
+.contact-section { background:radial-gradient(at 100% 0%,#8365db24,transparent 58%),#111b34; border-color:#859cf0; }
+:focus-visible { outline:3px solid #eaf2ff!important; outline-offset:4px; }
+@media(prefers-reduced-motion:reduce) {
+  .cinematic-isa,.cinematic-hero .hero-actions .button { animation:none!important; transition:none!important; }
+}
