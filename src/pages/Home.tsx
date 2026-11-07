@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ArrowDown, ArrowUpRight, Sparkles, CheckCircle2, WandSparkles, Camera, Play, ArrowRight, Instagram, Film, Zap, Layers3, MousePointer2, MonitorPlay } from 'lucide-react';
 import { services } from '../data/services';
 import { store } from '../config/store';
@@ -6,32 +6,43 @@ import { Artwork, Contact, FAQ, ServiceCard, Steps, asset } from '../components/
 import { Link } from 'react-router-dom';
 
 const gallery = [
- {id:'campanha',label:'Campanha visual',type:'Imagens',src:'campanha-barbearia.jpg',service:'artes-comerciais',description:'Conceito demonstrativo de divulgação comercial'},
- {id:'pizza',label:'Fotografia comercial',type:'Imagens',src:'pizza-comercial.jpg',service:'fotos-comerciais',description:'Conceito demonstrativo de fotografia gastronômica'},
- {id:'isa',label:'ISA Guardiã',type:'Personagem',src:'isa-lifestyle.webp',service:null,description:'Personagem virtual original da marca'},
- {id:'produto',label:'Direção de produto',type:'Imagens',src:'produto.webp',service:'fotos-comerciais',description:'Conceito ilustrativo de produto'},
- {id:'retrato',label:'Identidade virtual',type:'Personagem',src:'isa-perfil.webp',service:null,description:'Retrato da ISA Guardiã'},
- {id:'avatar',label:'Avatar da ISA',type:'Personagem',src:'isa-avatar.png',service:null,description:'Avatar original da personagem'}
+ {id:'campanha',label:'Campanha para barbearia',type:'Campanhas',src:'campanha-barbearia.jpg',service:'artes-comerciais',description:'Campanha demonstrativa para divulgação de barbearia'},
+ {id:'pizza',label:'Fotografia gastronômica',type:'Gastronomia',src:'pizza-comercial.jpg',service:'fotos-comerciais',description:'Cena demonstrativa de fotografia de pizza'},
+ {id:'isa',label:'ISA Guardiã — lifestyle',type:'ISA Guardiã',src:'isa-lifestyle.webp',service:null,description:'Retrato da personagem virtual ISA Guardiã'},
+ {id:'produto',label:'Composição de produto',type:'Produtos',src:'produto.webp',service:'fotos-comerciais',description:'Conceito demonstrativo de fotografia de produto'},
+ {id:'retrato',label:'ISA — identidade original',type:'ISA Guardiã',src:'isa-perfil.webp',service:null,description:'Fotografia original da personagem virtual ISA Guardiã'},
+ {id:'avatar',label:'ISA — avatar original',type:'ISA Guardiã',src:'isa-avatar.png',service:null,description:'Avatar original da personagem virtual'},
+ {id:'royal',label:'ISA — azul royal',type:'ISA Guardiã',src:'cinematic/isa-blazer-royal.webp',service:null,description:'Retrato virtual da ISA com blazer azul royal'},
+ {id:'marinho',label:'ISA — direção editorial',type:'ISA Guardiã',src:'cinematic/isa-blazer-marinho.webp',service:null,description:'Retrato virtual da ISA com blazer marinho'},
+ {id:'estudio',label:'ISA no estúdio criativo',type:'ISA Guardiã',src:'cinematic/isa-estudio.png',service:null,description:'Arte demonstrativa da personagem ISA em um estúdio'},
+ {id:'campanha-nova',label:'Campanha com personalidade',type:'Campanhas',src:'cinematic/campanha-fotorrealista.webp',service:'artes-comerciais',description:'Campanha conceitual em estilo violeta e preto'},
+ {id:'cafe',label:'Cardápio digital de cafeteria',type:'Sites e catálogos',src:'cinematic/cardapio-cafe.png',service:'sites-catalogos',description:'Conceito de cardápio digital apresentado em smartphone'},
+ {id:'presenca',label:'Presença digital de negócios locais',type:'Sites e catálogos',src:'cinematic/presenca-local.png',service:'presenca-digital',description:'Conceito de presença digital com mapa e indicadores'},
+ {id:'gastronomia',label:'Menu gastronômico interativo',type:'Gastronomia',src:'cinematic/gastronomia-01.jpg',service:'sites-catalogos',description:'Conceito de menu gastronômico em smartphone'},
+ {id:'barbearia',label:'Barbearia — direção de campanha',type:'Campanhas',src:'cinematic/barbearia-01.jpg',service:'artes-comerciais',description:'Conceito de publicidade de barbearia com fotografia cinematográfica'}
 ] as const;
+const categories = ['Todos','ISA Guardiã','Campanhas','Gastronomia','Produtos','Sites e catálogos'] as const;
+const highlights = [gallery[10],gallery[13],gallery[7]] as const;
 type GalleryItem = typeof gallery[number];
 
 export default function Home() {
  const [filter,setFilter]=useState('Todos');
  const [selected,setSelected]=useState<GalleryItem|null>(null);
  const shown = gallery.filter(item=>filter==='Todos'||item.type===filter);
+ useEffect(()=>{ if(!selected)return;const onKeyDown=(event:KeyboardEvent)=>{if(event.key==='Escape')setSelected(null)};window.addEventListener('keydown',onKeyDown);return()=>window.removeEventListener('keydown',onKeyDown)},[selected]);
  return <>
-  <section className="container hero hero-isa neon-hero" aria-labelledby="home-title">
+  <section className="container hero hero-isa neon-hero cinematic-hero" aria-labelledby="home-title">
    <div className="hero-copy neon-copy">
     <span className="eyebrow"><span className="status-dot"/> ESTÚDIO CRIATIVO · INTELIGÊNCIA ARTIFICIAL</span>
-    <h1 id="home-title">Sua imaginação não tem limites.<br/><span>Suas criações também não.</span></h1>
-    <p>Artes, imagens comerciais, vídeos e experiências digitais para dar mais presença às suas ideias e ao seu negócio.</p>
+    <h1 id="home-title">O futuro da sua marca <span>começa com uma ideia.</span></h1>
+    <p>Ideias que se transformam em imagens, campanhas e experiências digitais marcantes. Um estúdio criativo com inteligência artificial e personalidade própria.</p>
     <div className="hero-actions"><a className="button" href="#servicos">Conheça nossos serviços <ArrowUpRight size={19}/></a><a className="text-button" href="#portfolio">Explorar portfólio <ArrowRight size={16}/></a></div>
     <div className="hero-notes"><span><CheckCircle2 size={15}/> Projetos personalizados</span><span><CheckCircle2 size={15}/> Orçamento antes de começar</span></div>
    </div>
-   <div className="isa-composition neon-isa">
+   <div className="isa-composition neon-isa cinematic-isa">
     <div className="neon-aura" aria-hidden="true"/><div className="isa-orbit" aria-hidden="true"/>
     <span className="studio-word" aria-hidden="true">FUTURO.</span>
-    <div className="isa-portrait"><img src={asset('isa-perfil.webp')} alt="ISA Guardiã, personagem virtual oficial do IA Fácil" width="1000" height="1000" fetchPriority="high"/></div>
+    <div className="isa-portrait"><img src={asset('cinematic/isa-blazer-royal.webp')} alt="ISA Guardiã, personagem virtual oficial do IA Fácil, usando blazer azul royal" width="1000" height="1000" fetchPriority="high"/></div>
     <div className="floating-service floating-photo"><span><Camera size={19}/></span><div><small>CRIATIVIDADE VISUAL</small><strong>Imagens que impactam</strong></div></div>
     <div className="floating-service floating-video"><span><Play size={18}/></span><div><small>TECNOLOGIA + IMAGINAÇÃO</small><strong>Novas possibilidades</strong></div></div>
     <div className="isa-signature"><span>Isa Guardiã</span><small>PERSONAGEM VIRTUAL · CRIADA COM IA</small></div>
@@ -47,18 +58,23 @@ export default function Home() {
 
   <section className="neon-showreel" id="apresentacao"><div className="container section neon-showreel-layout">
    <div><span className="eyebrow">CRIATIVIDADE EM MOVIMENTO</span><h2>Não imagine apenas.<br/>Veja as possibilidades.</h2><p>Conheça o universo visual do IA Fácil. As imagens desta apresentação são conceitos demonstrativos e não representam clientes reais.</p><a href="#portfolio" className="button">Explorar projetos <ArrowUpRight size={17}/></a></div>
-   <div className="showreel-stage"><img src={asset('campanha-barbearia.jpg')} loading="lazy" alt="Demonstração de campanha visual do IA Fácil"/><div className="showreel-badge"><MonitorPlay size={18}/> Vitrine de conceitos visuais</div><span className="showreel-status">Vídeo de apresentação em preparação</span></div>
+   <div className="showreel-stage"><img src={asset('cinematic/cardapio-cafe.png')} loading="lazy" alt="Conceito demonstrativo de cardápio de cafeteria em smartphone"/><div className="showreel-badge"><MonitorPlay size={18}/> Vitrine de conceitos visuais</div><span className="showreel-status">Vídeo de apresentação em preparação</span></div>
+  </div></section>
+
+  <section className="cinematic-featured" aria-labelledby="cinematic-featured-title"><div className="container section">
+   <div className="cinematic-featured-intro"><div><span className="eyebrow">DIREÇÃO CRIATIVA // SELEÇÃO</span><h2 id="cinematic-featured-title">Uma vitrine de <em>possibilidades reais de criação.</em></h2></div><p>Conceitos visuais para inspirar novas campanhas, negócios e identidades. Cada composição demonstra uma possibilidade criativa — não representa cliente real.</p></div>
+   <div className="cinematic-feature-grid">{highlights.map((item,index)=><button key={item.id} type="button" className={'cinematic-feature-card cinematic-feature-'+index} onClick={()=>setSelected(item)} aria-label={'Ampliar '+item.label}><img src={asset(item.src)} alt={item.description} loading="lazy"/><span className="cinematic-feature-overlay"><small>0{index+1} / CONCEITO CRIATIVO</small><strong>{item.label}</strong><ArrowUpRight size={22}/></span></button>)}</div>
   </div></section>
 
   <section id="portfolio" className="portfolio-section neon-portfolio"><div className="container section">
-   <div className="section-heading"><div><span className="eyebrow">GALERIA DE CRIAÇÕES</span><h2>Ideias que ganham<br/>forma e personalidade.</h2></div><p>Explore os materiais já presentes no IA Fácil.<br/>Nenhuma fotografia foi removida.</p></div>
-   <div className="portfolio-filters" role="group" aria-label="Filtrar portfólio">{['Todos','Imagens','Personagem'].map(label=><button key={label} type="button" onClick={()=>setFilter(label)} aria-pressed={filter===label} className={filter===label?'active':''}>{label}</button>)}</div>
-   <div className="neon-gallery">{shown.map((item,i)=><button type="button" className={'neon-gallery-item '+(i===0?'featured':'')} key={item.id} onClick={()=>setSelected(item)} aria-label={'Ampliar '+item.label}><img src={asset(item.src)} alt={item.description} loading="lazy"/><span className="neon-gallery-info"><small>{item.type} · CONCEITO DEMONSTRATIVO</small><strong>{item.label}</strong><ArrowUpRight size={18}/></span></button>)}</div>
+   <div className="section-heading"><div><span className="eyebrow">GALERIA DE CRIAÇÕES</span><h2>Ideias que ganham<br/>forma e personalidade.</h2></div><p>Imagens originais e novas criações selecionadas para apresentar o universo visual do IA Fácil.</p></div>
+   <div className="portfolio-filters" role="group" aria-label="Filtrar portfólio">{categories.map(label=><button key={label} type="button" onClick={()=>setFilter(label)} aria-pressed={filter===label} className={filter===label?'active':''}>{label}</button>)}</div>
+   <div className="neon-gallery cinematic-gallery">{shown.map((item,i)=><button type="button" className={'neon-gallery-item '+(i===0?'featured':'')} key={item.id} onClick={()=>setSelected(item)} aria-label={'Ampliar '+item.label}><img src={asset(item.src)} alt={item.description} loading="lazy"/><span className="neon-gallery-info"><small>{item.type} · CONCEITO DEMONSTRATIVO</small><strong>{item.label}</strong><ArrowUpRight size={18}/></span></button>)}</div>
    <p className="pricing-note">Portfólio demonstrativo: as cenas comerciais são conceitos fictícios. A ISA Guardiã é uma personagem virtual, não uma pessoa real ou cliente.</p>
   </div></section>
 
   <section id="isa" className="container section neon-isa-story">
-   <div className="neon-isa-story-image"><img src={asset('isa-lifestyle.webp')} alt="ISA Guardiã, identidade visual virtual do IA Fácil" loading="lazy"/><span>ISA // IDENTIDADE VIRTUAL</span></div>
+   <div className="neon-isa-story-image"><img src={asset('cinematic/isa-blazer-marinho.webp')} alt="ISA Guardiã, personagem virtual, em retrato editorial" loading="lazy"/><span>ISA // IDENTIDADE VIRTUAL</span></div>
    <div><span className="eyebrow">CONHEÇA A ISA</span><h2>A inteligência tem<br/><em>uma nova identidade.</em></h2><p>A ISA Guardiã representa o encontro entre tecnologia, imaginação e criatividade. Uma personagem virtual que dá rosto ao universo do IA Fácil.</p><p>Ela é parte da nossa identidade visual. O atendimento e os projetos são conduzidos pela equipe responsável.</p><Link to="/sobre/" className="button outline">Conheça o IA Fácil <ArrowUpRight size={18}/></Link></div>
   </section>
 
