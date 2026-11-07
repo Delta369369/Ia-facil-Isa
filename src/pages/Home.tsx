@@ -6,6 +6,9 @@ import { Artwork, Contact, FAQ, ServiceCard, Steps, asset } from '../components/
 import { Link } from 'react-router-dom';
 
 const gallery = [
+ {id:'shorts-banner',label:'ISA Fácil Shorts — universo neon',type:'ISA Fácil Shorts',src:'neon/isa-facil-shorts-banner.jpg',service:null,description:'Banner visual autorizado do quadro ISA Fácil Shorts, personagem virtual em ambiente tecnológico neon'},
+ {id:'shorts-retrato',label:'ISA no universo ciberpunk',type:'ISA Fácil Shorts',src:'neon/isa-neon-portrait.jpg',service:null,description:'Retrato da personagem virtual ISA com cabelo bicolor e iluminação ciano e rosa'},
+ {id:'shorts-conceito',label:'Direção de arte futurista',type:'ISA Fácil Shorts',src:'neon/shorts-visual-reference.png',service:null,description:'Referência visual autorizada para a identidade neon da marca'}, 
  {id:'campanha',label:'Campanha para barbearia',type:'Campanhas',src:'campanha-barbearia.jpg',service:'artes-comerciais',description:'Campanha demonstrativa para divulgação de barbearia'},
  {id:'pizza',label:'Fotografia gastronômica',type:'Gastronomia',src:'pizza-comercial.jpg',service:'fotos-comerciais',description:'Cena demonstrativa de fotografia de pizza'},
  {id:'isa',label:'ISA Guardiã — lifestyle',type:'ISA Guardiã',src:'isa-lifestyle.webp',service:null,description:'Retrato da personagem virtual ISA Guardiã'},
@@ -21,8 +24,8 @@ const gallery = [
  {id:'gastronomia',label:'Menu gastronômico interativo',type:'Gastronomia',src:'cinematic/gastronomia-01.jpg',service:'sites-catalogos',description:'Conceito de menu gastronômico em smartphone'},
  {id:'barbearia',label:'Barbearia — direção de campanha',type:'Campanhas',src:'cinematic/barbearia-01.jpg',service:'artes-comerciais',description:'Conceito de publicidade de barbearia com fotografia cinematográfica'}
 ] as const;
-const categories = ['Todos','ISA Guardiã','Campanhas','Gastronomia','Produtos','Sites e catálogos'] as const;
-const highlights = [gallery[10],gallery[13],gallery[7]] as const;
+const categories = ['Todos','ISA Fácil Shorts','ISA Guardiã','Campanhas','Gastronomia','Produtos','Sites e catálogos'] as const;
+const highlights = [gallery[0],gallery[1],gallery[2]] as const;
 type GalleryItem = typeof gallery[number];
 
 export default function Home() {
@@ -33,7 +36,7 @@ export default function Home() {
  return <>
   <section className="container hero hero-isa neon-hero cinematic-hero" aria-labelledby="home-title">
    <div className="hero-copy neon-copy">
-    <span className="eyebrow"><span className="status-dot"/> ESTÚDIO CRIATIVO · INTELIGÊNCIA ARTIFICIAL</span>
+    <span className="eyebrow"><span className="status-dot"/> ESTÚDIO CRIATIVO · TECNOLOGIA · IDENTIDADE VISUAL</span>
     <h1 id="home-title">O futuro da sua marca <span>começa com uma ideia.</span></h1>
     <p>Ideias que se transformam em imagens, campanhas e experiências digitais marcantes. Um estúdio criativo com inteligência artificial e personalidade própria.</p>
     <div className="hero-actions"><a className="button" href="#servicos">Conheça nossos serviços <ArrowUpRight size={19}/></a><a className="text-button" href="#portfolio">Explorar portfólio <ArrowRight size={16}/></a></div>
@@ -41,14 +44,19 @@ export default function Home() {
    </div>
    <div className="isa-composition neon-isa cinematic-isa">
     <div className="neon-aura" aria-hidden="true"/><div className="isa-orbit" aria-hidden="true"/>
-    <span className="studio-word" aria-hidden="true">FUTURO.</span>
-    <div className="isa-portrait"><img src={asset('cinematic/isa-blazer-royal.webp')} alt="ISA Guardiã, personagem virtual oficial do IA Fácil, usando blazer azul royal" width="1000" height="1000" fetchPriority="high"/></div>
+    <span className="studio-word" aria-hidden="true">ISA FÁCIL.</span>
+    <div className="isa-portrait"><img src={asset('neon/isa-neon-portrait.jpg')} alt="ISA Guardiã em retrato futurista, iluminação ciano e magenta" width="1000" height="1000" fetchPriority="high"/></div>
     <div className="floating-service floating-photo"><span><Camera size={19}/></span><div><small>CRIATIVIDADE VISUAL</small><strong>Imagens que impactam</strong></div></div>
     <div className="floating-service floating-video"><span><Play size={18}/></span><div><small>TECNOLOGIA + IMAGINAÇÃO</small><strong>Novas possibilidades</strong></div></div>
     <div className="isa-signature"><span>Isa Guardiã</span><small>PERSONAGEM VIRTUAL · CRIADA COM IA</small></div>
    </div>
   </section>
   <div className="container disciplines neon-disciplines"><span>CRIAÇÃO QUE VAI ALÉM</span><b>Imagem</b><i>✦</i><b>Vídeo</b><i>✦</i><b>Experiência digital</b><a href="#servicos" aria-label="Ir para os serviços"><ArrowDown size={19}/></a></div>
+
+  <section id="isa-shorts" className="container shorts-neon-feature section" aria-labelledby="shorts-feature-title">
+   <div className="shorts-neon-intro"><span className="eyebrow">ISA FÁCIL SHORTS // UNIVERSO DIGITAL</span><h2 id="shorts-feature-title">Tecnologia e criatividade <em>em outra dimensão.</em></h2><p>Conheça a identidade visual do quadro ISA Fácil Shorts: tecnologia, segurança digital e tutoriais em uma linguagem direta. Os materiais representam a proposta editorial do projeto.</p><div className="shorts-neon-actions"><a className="button shorts-neon-primary" href="#dark-studio">Conhecer o projeto <ArrowUpRight size={18}/></a><a className="button outline" href="#servicos">Ver serviços <ArrowRight size={17}/></a></div></div>
+   <figure className="shorts-neon-banner"><img src={asset('neon/isa-facil-shorts-banner.jpg')} alt="Banner oficial ISA Fácil Shorts com a ISA e chamadas de tecnologia, segurança e tutoriais" loading="lazy"/><figcaption>Identidade visual e banner demonstrativo do ISA Fácil Shorts.</figcaption></figure>
+  </section>
 
   <section id="servicos" className="container section neon-section">
    <div className="section-heading"><div><span className="eyebrow">O QUE PODEMOS CRIAR</span><h2>Tecnologia para transformar<br/>suas ideias em realidade.</h2></div><p>Explore as soluções disponíveis.<br/>Cada projeto começa com uma conversa.</p></div>
@@ -74,7 +82,7 @@ export default function Home() {
   </div></section>
 
   <section id="isa" className="container section neon-isa-story">
-   <div className="neon-isa-story-image"><img src={asset('cinematic/isa-blazer-marinho.webp')} alt="ISA Guardiã, personagem virtual, em retrato editorial" loading="lazy"/><span>ISA // IDENTIDADE VIRTUAL</span></div>
+   <div className="neon-isa-story-image"><img src={asset('neon/isa-neon-portrait.jpg')} alt="ISA Guardiã, personagem virtual, em retrato futurista com iluminação neon" loading="lazy"/><span>ISA // IDENTIDADE VIRTUAL</span></div>
    <div><span className="eyebrow">CONHEÇA A ISA</span><h2>A inteligência tem<br/><em>uma nova identidade.</em></h2><p>A ISA Guardiã representa o encontro entre tecnologia, imaginação e criatividade. Uma personagem virtual que dá rosto ao universo do IA Fácil.</p><p>Ela é parte da nossa identidade visual. O atendimento e os projetos são conduzidos pela equipe responsável.</p><Link to="/sobre/" className="button outline">Conheça o IA Fácil <ArrowUpRight size={18}/></Link></div>
   </section>
 
